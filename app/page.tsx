@@ -1,9 +1,10 @@
 import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
+// import { ThreeItemGrid } from 'components/grid/three-items';
 import Footer from 'components/layout/footer';
 import { Suspense } from 'react';
+import { SplineYe } from './spline';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export const metadata = {
   description: 'High-performance ecommerce store built with Next.js, Vercel, and BigCommerce.',
@@ -15,8 +16,8 @@ export const metadata = {
 export default async function HomePage() {
   return (
     <>
-      <ThreeItemGrid />
       <Suspense>
+        <SplineYe />
         <Carousel />
         <Suspense>
           <Footer />

@@ -3,7 +3,7 @@ import ProductGridItems from 'components/layout/product-grid-items';
 import { getProducts } from 'lib/bigcommerce';
 import { defaultSort, sorting } from 'lib/constants';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export const metadata = {
   title: 'Search',

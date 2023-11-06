@@ -81,7 +81,8 @@ const getEntityIdByHandle = async (entityHandle: string) => {
     }
   });
 
-  return res.body.data.site.route.node.entityId;
+  console.log(res);
+  return res?.body?.data?.site?.route?.node?.entityId ?? 'default-entity-id';
 };
 
 export async function bigCommerceFetch<T>({
@@ -300,7 +301,10 @@ export async function addToCart(
   return bigCommerceToVercelCart(bigCommerceCart, productsByIdList, checkout, checkoutUrl);
 }
 
-export async function removeFromCart(cartId: string, lineIds: string[]): Promise<VercelCart | undefined> {
+export async function removeFromCart(
+  cartId: string,
+  lineIds: string[]
+): Promise<VercelCart | undefined> {
   let cartState: { status: number; body: BigCommerceDeleteCartItemOperation };
   const removeCartItem = async (itemId: string) => {
     const res = await bigCommerceFetch<BigCommerceDeleteCartItemOperation>({
@@ -331,7 +335,7 @@ export async function removeFromCart(cartId: string, lineIds: string[]): Promise
 
   const cart = cartState!.body.data.cart.deleteCartLineItem.cart;
 
-  if (cart === null)  {
+  if (cart === null) {
     return undefined;
   }
 

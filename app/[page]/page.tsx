@@ -4,7 +4,7 @@ import Prose from 'components/prose';
 import { getPage } from 'lib/bigcommerce';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export const revalidate = 43200; // 12 hours in seconds
 
