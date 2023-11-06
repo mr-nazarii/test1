@@ -16,7 +16,6 @@ export default async function HomePage() {
   return (
     <>
       <Suspense>
-        <SplineYe />
         <Carousel />
         <Suspense>
           <Footer />
